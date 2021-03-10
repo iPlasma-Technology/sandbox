@@ -1,0 +1,23 @@
+<?php
+$banner_news=bannernews();
+//print_r($banner_news);
+$date=date('d F, Y',strtotime($banner_news[0]['updated']));
+$img_path='https://iplasma.life/custom/domain_1/image_files/sitemgr_photo_';
+?>
+<div class="header_banner_section">
+<div class="header inner_header">
+    <?php include(realpath(dirname(__FILE__) . "/../templates/header_menu.php"));?>
+</div>
+<div class="news_banner" style="background: url(<?php echo $img_path.$banner_news[0]['cover_id'].".".$banner_news[0]['img_ext']?>) no-repeat center top;"> 
+   <div class="container">
+   <div class="news_banner_inner">
+    <h2><?php echo $banner_news[0]['title'];?></h2>
+    <span class="date"><?php echo $date;?></span>
+    <p><?php echo $banner_news[0]['content'];?></p>
+</div>
+
+</div>
+
+</div>
+
+</div>
